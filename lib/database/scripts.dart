@@ -6,4 +6,6 @@ CREATE TABLE tasks(
 );
 ''';
 
+const tableName = "tasks";
+
 // FUTURAMENTE PODEMOS TRAZER O NOME DO BANCO DE DADOS PRA CA...

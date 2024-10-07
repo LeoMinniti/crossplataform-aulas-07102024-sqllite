@@ -41,7 +41,14 @@ class  TaskDatabase {
 
   Future<int> insert(Task value) async{
     final db = await instance.database; // obtendo a cnexão com o BD
-    return db.insert("tasks", value.toJson() ); // inserindo valores na tabela tasks
+    return db.insert(tableName, value.toJson() ); // inserindo valores na tabela tasks
+  }
+
+  Future<List<Task>> readAll()async {
+    final db = await instance.database; // obtendo a cnexão com o BD
+    final result = await db.query(tableName);
+    return result.map( (taskJson) =>
+      Task.fromJson(taskJson)).toList();
   }
 
 }
