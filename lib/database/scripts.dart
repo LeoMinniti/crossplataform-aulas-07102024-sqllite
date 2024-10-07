@@ -1,5 +1,5 @@
 const createTable = '''
-CREATE TABLE(
+CREATE TABLE tasks(
   id INTEGER AUTOINCREMENT PRIMARY KEY NOT NULL
   , content TEXT NOT NULL 
   , status INTEGER NOT NULL

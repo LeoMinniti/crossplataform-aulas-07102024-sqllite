@@ -1,4 +1,5 @@
 import 'package:rm76172/database/scripts.dart';
+import 'package:rm76172/domain/task.dart';
 import 'package:sqflite/sqflite.dart';
 import "package:path/path.dart"; // adicionado para reconhecer o JOIN
 
@@ -38,6 +39,10 @@ class  TaskDatabase {
    await db.execute(createTable);
   }
 
+  Future<int> insert(Task value) async{
+    final db = await instance.database; // obtendo a cnexão com o BD
+    return db.insert("tasks", value.toJson() ); // inserindo valores na tabela tasks
+  }
 
 }
 
